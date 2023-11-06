@@ -7,6 +7,13 @@
 // Задаем степень точности вычислений (до 5 знаков после запятой)
 double epsilon = 1e-5;
 
+int myfunc(int b) {
+    char *buffer = malloc(sizeof(char) * 1000);
+    buffer [0] = b + 4;
+    // здесь должен ругаться sonarcloud, т.к. утечка памяти
+    return buffer[0];
+}
+
 int fibonachi(int num) {
     int prev = 1;
     int next = 1;
@@ -31,7 +38,7 @@ int fibonachi(int num) {
 Roots my_sqrt(double a, double b, double c) {
     double D = b*b - 4*a*c;
     Roots result;
-    
+
     // а == 0 недопустимое значение
     if (fabs(a) < epsilon) {
         result.root1 = result.root2 = -1;

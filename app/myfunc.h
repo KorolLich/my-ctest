@@ -7,6 +7,8 @@ typedef struct {
     double root2;
 } Roots;
 
+int myfunc(int b);
+
 // Погрешность вычислений
 extern double epsilon;
 
