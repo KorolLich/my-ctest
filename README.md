@@ -196,3 +196,17 @@
                 </ol>
               </ol>
 
+# Интеграционное тестирование
+<ol>
+  <li>
+    <h3>Тест И1</h3>
+    <ul>
+      <li>Методы: int fibonachi(int num), Roots my_sqrt(double a, double b, double c)</li>
+      <li>Описание: Проверяем, можно ли использовать результат работы функции fibonachi в функции my_sqrt</li>
+      <li>Входные данные для int fibonachi: 4 6 8</li>
+      <li>Ожидаемый результат: 3 6 8</li>
+      <li>Входные данные для Roots my_sqrt: 4 6 8</li>
+      <li>Ожидаемый результат: root1 и root2 равны -1 (нет корней)</li>
+    </ul>	
+  </li>
+</ol>
