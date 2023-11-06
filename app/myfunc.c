@@ -31,7 +31,12 @@ int fibonachi(int num) {
 Roots my_sqrt(double a, double b, double c) {
     double D = b*b - 4*a*c;
     Roots result;
-
+    
+    // а == 0 недопустимое значение
+    if (fabs(a) < epsilon) {
+        result.root1 = result.root2 = -1;
+        return result;
+    }
     // Нет корней
     if (D + epsilon < 0) {
         result.root1 = result.root2 = -1;
