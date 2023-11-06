@@ -135,7 +135,6 @@
     	  </ul>
     	</li>
   </li>
-</ol>
 <ol>
   <li>
     <h3>Метод Roots my_sqrt(double a, double b, double c)</h3>
@@ -206,5 +205,4 @@
     	</li>
     </ol>
   </li>
-
 </ol>
