@@ -1,16 +1,11 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #include "myfunc.h"
 
-int myfunc(int b) {
-    char *buffer = malloc(sizeof(char) * 1000);
-    buffer [0] = b + 4;
-    // здесь должен ругаться sonarcloud, т.к. утечка памяти
-    return buffer[0];
-}
-
-int val;
+// Задаем степень точности вычислений (до 5 знаков после запятой)
+double epsilon = 1e-5;
 
 int fibonachi(int num) {
     int prev = 1;
@@ -32,7 +27,25 @@ int fibonachi(int num) {
     return next;
 }
 
-void printStdoutMessages() {
-    printf("This is a test message from myfunc.c\n");
-    printf("Do not disturb\n");
+// a*x^2 + b*x + c = 0 
+Roots my_sqrt(double a, double b, double c) {
+    double D = b*b - 4*a*c;
+    Roots result;
+
+    // Нет корней
+    if (D + epsilon < 0) {
+        result.root1 = result.root2 = -1;
+    }
+    // Один корень
+    else if (fabs(D) < epsilon) {
+        result.root1 = result.root2 = -b / (2 * a);
+    }
+    // Два корня
+    else {
+        double sqrtD = sqrt(D);
+        result.root1 = (-b + sqrtD) / (2 * a);
+        result.root2 = (-b - sqrtD) / (2 * a);
+    }
+
+    return result;
 }

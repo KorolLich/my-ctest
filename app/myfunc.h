@@ -1,12 +1,16 @@
 #ifndef MYFUNC_H
 #define MYFUNC_H
 
-int myfunc(int b);
+// Зададим структуру для возврата корней квадратного уравнения
+typedef struct {
+    double root1;
+    double root2;
+} Roots;
+
+// Погрешность вычислений
+extern double epsilon;
 
 int fibonachi(int num);
 
-void printStdoutMessages();
-
-extern int val;
-
+Roots my_sqrt(double a, double b, double c);
 #endif // MYFUNC_H
