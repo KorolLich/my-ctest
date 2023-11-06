@@ -130,7 +130,7 @@
                 - Проверить, что возвращенное значение равно 0</li>
               </ul>
             </li>
-          </ol>
+         </ol>
         </li>
         <li>
           <h3>Метод Roots my_sqrt(double a, double b, double c)</h3>
