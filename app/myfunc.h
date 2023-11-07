@@ -14,5 +14,5 @@ extern double epsilon;
 
 int fibonachi(int num);
 
-Roots my_sqrt(double a, double b, double c);
+Roots* my_sqrt(double a, double b, double c);
 #endif // MYFUNC_H

@@ -41,8 +41,8 @@ int main(int argc, char** argv) {
         double b = atof(argv[3]);
         double c = atof(argv[4]);
 
-        Roots roots = my_sqrt(a, b, c);
-        printf("Результат для my_sqrt(%.2lf, %.2lf, %.2lf): root1=%.6lf, root2=%.6lf\n", a, b, c, roots.root1, roots.root2);
+        Roots* roots = my_sqrt(a, b, c);
+        printf("Результат для my_sqrt(%.2lf, %.2lf, %.2lf): root1=%.6lf, root2=%.6lf\n", a, b, c, roots->root1, roots->root2);
     } else {
         printf("Неизвестная команда: %s\n", argv[1]);
         return 1;

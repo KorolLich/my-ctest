@@ -16,10 +16,10 @@ TEST(integraionTest, num4num6num8NoRouts) {
     ASSERT_EQ(b, 8);
     ASSERT_EQ(c, 21);
 
-    Roots result = my_sqrt(double(a), double(b), double(c));
+    Roots* ptr = NULL;
+    Roots* result = my_sqrt(double(a), double(b), double(c));
 
-    ASSERT_NEAR(result.root1, -1.0, epsilon);
-    ASSERT_NEAR(result.root2, -1.0, epsilon);
+    ASSERT_EQ(result, ptr);
 }
 
 #endif // INTEGRATION_TEST_H

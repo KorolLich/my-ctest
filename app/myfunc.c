@@ -35,28 +35,27 @@ int fibonachi(int num) {
 }
 
 // a*x^2 + b*x + c = 0 
-Roots my_sqrt(double a, double b, double c) {
+Roots* my_sqrt(double a, double b, double c) {
     double D = b*b - 4*a*c;
-    Roots result;
+    Roots* result = malloc(sizeof(Roots)); // Выделяем память под результат
 
     // а == 0 недопустимое значение
     if (fabs(a) < epsilon) {
-        result.root1 = result.root2 = -1;
-        return result;
+        return NULL;
     }
     // Нет корней
     if (D + epsilon < 0) {
-        result.root1 = result.root2 = -1;
+        return NULL;
     }
     // Один корень
     else if (fabs(D) < epsilon) {
-        result.root1 = result.root2 = -b / (2 * a);
+        result->root1 = result->root2 = -b / (2 * a);
     }
     // Два корня
     else {
         double sqrtD = sqrt(D);
-        result.root1 = (-b + sqrtD) / (2 * a);
-        result.root2 = (-b - sqrtD) / (2 * a);
+        result->root1 = (-b + sqrtD) / (2 * a);
+        result->root2 = (-b - sqrtD) / (2 * a);
     }
 
     return result;
