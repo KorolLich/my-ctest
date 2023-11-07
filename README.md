@@ -1,4 +1,5 @@
 # ctest
+[![Coverage Status](https://coveralls.io/repos/github/KorolLich/my-ctest/badge.png)](https://coveralls.io/github/KorolLich/my-ctest)
 # План тестирования:
 
 # Аттестационное тестирование
