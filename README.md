@@ -2,6 +2,8 @@
 [![CI/CD GitHub Actions](https://github.com/KorolLich/my-ctest/actions/workflows/test-action.yml/badge.svg)](https://github.com/KorolLich/my-ctest/actions/workflows/test-action.yml)
 [![Coverage Status](https://coveralls.io/repos/github/KorolLich/my-ctest/badge.png)](https://coveralls.io/github/KorolLich/my-ctest)
 [![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=KorolLich_my-ctest&metric=alert_status)](https://sonarcloud.io/dashboard?id=KorolLich_my-ctest)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=KorolLich_my-ctest&metric=bugs)](https://sonarcloud.io/summary/new_code?id=KorolLich_my-ctest)
+[![Code smells](https://sonarcloud.io/api/project_badges/measure?project=KorolLich_my-ctest&metric=code_smells)](https://sonarcloud.io/dashboard?id=KorolLich_my-ctest)
 # План тестирования:
 
 # Аттестационное тестирование
