@@ -19,6 +19,7 @@ int is_integer(const char *str) {
 int main(int argc, char** argv) {
     if (argc < 2) {
         printf("Неверное количество аргументов\n");
+        printf("Использование: ./ctest fibonachi <num> или ./ctest my_sqrt <a> <b> <c>\n");
         return 1;
     }
 
@@ -36,13 +37,16 @@ int main(int argc, char** argv) {
             printf("Использование: %s my_sqrt <a> <b> <c>\n", argv[0]);
             return 1;
         }
-
         double a = atof(argv[2]);
         double b = atof(argv[3]);
         double c = atof(argv[4]);
-
         Roots* roots = my_sqrt(a, b, c);
-        printf("Результат для my_sqrt(%.2lf, %.2lf, %.2lf): root1=%.6lf, root2=%.6lf\n", a, b, c, roots->root1, roots->root2);
+        if (roots != NULL) {
+            printf("Результат для my_sqrt(%.2lf, %.2lf, %.2lf): root1=%.6lf, root2=%.6lf\n", a, b, c, roots->root1, roots->root2);
+            free(roots);
+        } else {
+            printf("Нет корней для my_sqrt(%.2lf, %.2lf, %.2lf)\n", a, b, c);
+        }
     } else {
         printf("Неизвестная команда: %s\n", argv[1]);
         return 1;
