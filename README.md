@@ -1,4 +1,5 @@
 # ctest
+[![CI/CD GitHub Actions](https://github.com/KorolLich/my-ctest/actions/workflows/test-action.yml/badge.svg)](https://github.com/KorolLich/my-ctest/actions/workflows/test-action.yml)
 [![Coverage Status](https://coveralls.io/repos/github/KorolLich/my-ctest/badge.png)](https://coveralls.io/github/KorolLich/my-ctest)
 # План тестирования:
 
