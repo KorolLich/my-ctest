@@ -51,6 +51,5 @@ int main(int argc, char** argv) {
         printf("Неизвестная команда: %s\n", argv[1]);
         return 1;
     }
-
     return 0;
 }
