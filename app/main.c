@@ -28,7 +28,7 @@ int main(int argc, char** argv) {
             printf("Использование: %s fibonachi <num>\n", argv[0]);
             return 1;
         }
-
+ 
         int num = atoi(argv[2]);
         int result = fibonachi(num);
         printf("Результат для fibonachi(%d): %d\n", num, result);
