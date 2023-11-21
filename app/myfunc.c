@@ -7,13 +7,6 @@
 // Задаем степень точности вычислений (до 5 знаков после запятой)
 double epsilon = 1e-6;
 
-int myfunc(int b) {
-    char *buffer = malloc(sizeof(char) * 1000);
-    buffer [0] = b + 4;
-    // здесь должен ругаться sonarcloud, т.к. утечка памяти
-    return buffer[0];
-}
-
 int fibonachi(int num) {
     int prev = 1;
     int next = 1;
@@ -38,15 +31,27 @@ int fibonachi(int num) {
 Roots* my_sqrt(double a, double b, double c) {
     double D = b*b - 4*a*c;
 
-    // а == 0 недопустимое значение
+    // Обработка недопустимого значения
     if (fabs(a) < epsilon) {
+
+        // Если b отлично от нуля, решаем стандартное линейное уравнение bx + c = 0
+        if (fabs(b) > epsilon) {
+
+            Roots* result = malloc(sizeof(Roots));
+            result->root1 = -c / b;
+            result->root2 = -c / b;
+
+            return result;
+        }
         return NULL;
     }
     // Нет корней
     if (D + epsilon < 0) {
         return NULL;
     }
+
     Roots* result = malloc(sizeof(Roots)); // Выделяем память под результат
+    
     // Один корень
     if (fabs(D) < epsilon) {
         result->root1 = result->root2 = -b / (2 * a);

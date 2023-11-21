@@ -17,14 +17,24 @@ TEST(mySqrtTest, PositiveRoots) {
     ASSERT_NEAR(result->root2, -1.0, epsilon);
 }
 
-TEST(mySqrtTest, ZeroRoots) {
-    double a = 1.0;
-    double b = 0.0;
-    double c = 0.0;
+TEST(mySqrtTest, RealRoots) {
+    double a = 2.3;
+    double b = -10.6;
+    double c = 10.3;
 
     const Roots* result = my_sqrt(a, b, c);
-    ASSERT_NEAR(result->root1, 0.0, epsilon);
-    ASSERT_NEAR(result->root2, 0.0, epsilon);
+    ASSERT_NEAR(result->root1, 3.21635552014, epsilon);
+    ASSERT_NEAR(result->root2, 1.39234013202, epsilon);
+}
+
+TEST(mySqrtTest, StandartLinearEquation) {
+    double a = 0.0;
+    double b = -10.6;
+    double c = 10.3;
+
+    const Roots* result = my_sqrt(a, b, c);
+    ASSERT_NEAR(result->root1, 0.9716981132, epsilon);
+    ASSERT_NEAR(result->root2, 0.9716981132, epsilon);
 }
 
 TEST(mySqrtTest, MixedRoots) {
@@ -55,11 +65,11 @@ TEST(mySqrtTest, NoRealRoots2) {
     ASSERT_EQ(result, ptr);
 }
 
-TEST(mySqrtTest, ConflictingValue) {
-    
+TEST(mySqrtTest, NotEquation) {
     double a = 0.0; //По условию не может быть равно нулю
-    double b = 1.0;
+    double b = 0.0;
     double c = 1.0;
+
     Roots* ptr = NULL;
     const Roots* result = my_sqrt(a, b, c);
     ASSERT_EQ(result, ptr);
